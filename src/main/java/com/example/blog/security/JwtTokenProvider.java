@@ -43,11 +43,11 @@ public class JwtTokenProvider {
         } catch (MalformedJwtException ex){
             throw new BlogAPIException(HttpStatus.BAD_REQUEST, "Invalid Jwt Token");
         } catch (ExpiredJwtException ex){
-            throw new BlogAPIException(HttpStatus.BAD_REQUEST, "Invalid Token");
+            throw new BlogAPIException(HttpStatus.BAD_REQUEST, "Expired Token");
         } catch (UnsupportedJwtException ex){
-            throw new BlogAPIException(HttpStatus.BAD_REQUEST, "Invalid Token");
+            throw new BlogAPIException(HttpStatus.BAD_REQUEST, "Unsupported Token");
         } catch (IllegalArgumentException ex){
-            throw new BlogAPIException(HttpStatus.BAD_REQUEST, "Invalid Token");
+            throw new BlogAPIException(HttpStatus.BAD_REQUEST, "Empty String");
         }
 
     }
